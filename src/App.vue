@@ -3,9 +3,10 @@
 <template>
   <div class="root">
     <div class="aside">
+      <h1>ABSOLUTE CINEMA</h1>
       <nav>
         <ul>
-          <h1>ABSOLUTE CINEMA</h1>
+          
 
           <hr />
           <li>Главное меню</li>
@@ -15,7 +16,7 @@
           <li>Билеты</li>
           <hr />
 
-          <img src="./assets/cinemaBanner.png" alt="cinema-banner.png" />
+          <img id="cinema-banner" src="./assets/cinemaBanner.png" alt="cinema-banner.png" />
 
           <li>Настройки</li>
           <li>Помощь</li>
@@ -68,7 +69,16 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "./style.scss";
+
+$light-theme-background-color: #f8f8f8;
+
+$dark-theme-film-background: rgb(43, 43, 43);
+$dark-theme-text-color: white;
+
+
+
 .genres ul {
   display: flex;
   flex-direction: row;
@@ -96,13 +106,32 @@
     width: 250px;
     height: 350px;
     margin: 0 0px 40px 0px;
-    background-color: #f8f8f8;
+    background-color: $light-theme-background-color;
     border-radius: 20px;
-    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.25); 
+    box-shadow: $global-shadow-box;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $dark-theme-film-background;
+      color: $dark-theme-text-color;
+    }
+  }
+}
+
+h1 {
+  font-size: 2em;
+  
+  @media (max-width: 980px) {
+    font-size: 1.5em;
   }
 }
 
 hr {
   margin: 0;
+}
+
+#cinema-banner {
+  @media (max-width: 980px) {
+    display: none;
+  }
 }
 </style>

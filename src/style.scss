@@ -1,7 +1,24 @@
 @import "normalize.css";
 
+$light-theme-root-background-color: #f0f0f0;
+$light-theme-block-background-color: white;
+
+$dark-theme-root-background-color: rgb(36, 36, 36);
+$dark-theme-block-background-color: rgb(50, 50, 50);
+$dark-theme-text-color: white;
+
+$global-font-family: "Montserrat", sans-serif;
+$global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
+
 :root {
-  background-color: #f0f0f0;
+  font-size: 1em;
+
+  background-color: $light-theme-root-background-color;
+  font-family: $global-font-family;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-theme-root-background-color;
+  }
 }
 
 .root {
@@ -10,19 +27,52 @@
 }
 
 .aside {
-  background-color: white;
+  background-color: $light-theme-block-background-color;
   width: 25%;
   margin: 2vw 0 2vw 0;
+  box-sizing: border-box;
+  border-radius: 0 20px 20px 0;
+  padding: {
+    top: 0.5%;
+    left: 1.5%;
+    right: 1.5%;
+  };
+
+  box-shadow: $global-shadow-box;
+
+  nav ul {
+    padding: 0;
+    list-style: none;
+  }
 
   @media (max-width: 800px) {
     display: none;
   }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-theme-block-background-color;
+    color: $dark-theme-text-color;
+  }
 }
 
 .main {
-  background-color: white;
+  background-color: $light-theme-block-background-color;
   width: 100%;
+  min-width: 300px;
   box-sizing: border-box;
+  border-radius: 20px;
+  padding: {
+    top: 1%;
+    left: 2%;
+    right: 2%;
+  }
+
+  box-shadow: $global-shadow-box;
 
   margin: 2vw;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-theme-block-background-color;
+    color: $dark-theme-text-color;
+  }
 }
