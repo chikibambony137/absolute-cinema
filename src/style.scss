@@ -16,6 +16,8 @@ $global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
   background-color: $light-theme-root-background-color;
   font-family: $global-font-family;
 
+  overflow: hidden;
+
   @media (prefers-color-scheme: dark) {
     background-color: $dark-theme-root-background-color;
   }
@@ -45,7 +47,7 @@ $global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
     list-style: none;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     display: none;
   }
 
@@ -59,12 +61,17 @@ $global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
   background-color: $light-theme-block-background-color;
   width: 100%;
   min-width: 300px;
+  height: 95vh;
+
+  overflow: scroll;
+
   box-sizing: border-box;
   border-radius: 20px;
   padding: {
     top: 1%;
     left: 2%;
     right: 2%;
+    bottom: 1%;
   }
 
   box-shadow: $global-shadow-box;

@@ -91,21 +91,35 @@ $dark-theme-text-color: white;
 }
 
 .films {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
 
-  justify-content: space-around;
+  place-items: center;
 
   width: 100%;
-  padding: 3%;
+  max-height: none;
+
+  padding: {
+    top: 20px;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+  }
   box-sizing: border-box;
+  margin-top: 20px;
 
   .film {
     display: flex;
-    width: 250px;
-    height: 350px;
-    margin: 0 0px 40px 0px;
+
+    width: 100%;
+    min-width: 150px;
+    max-width: 300px;
+
+    height: 50vh;
+    min-height: 400px;
+    max-height: 500px;
+
     background-color: $light-theme-background-color;
     border-radius: 20px;
     box-shadow: $global-shadow-box;
@@ -120,7 +134,7 @@ $dark-theme-text-color: white;
 h1 {
   font-size: 2em;
   
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     font-size: 1.5em;
   }
 }
@@ -130,7 +144,7 @@ hr {
 }
 
 #cinema-banner {
-  @media (max-width: 980px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 }
