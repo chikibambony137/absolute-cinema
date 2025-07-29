@@ -3,28 +3,46 @@
 <template>
   <div class="root">
     <div class="aside">
-      <h1>ABSOLUTE CINEMA</h1>
+      <div class="logo-div">
+        <img class="logo-img" src="./assets/logo.png" alt="logo.png" />
+        <h1>ABSOLUTE CINEMA</h1>
+      </div>
+
       <nav>
         <ul>
-          
+          <div
+            style="
+              border-top: 1px solid #d5d5d5;
+              border-bottom: 1px solid #d5d5d5;
+            "
+          >
+            <li><a href="#">Главное меню</a></li>
+          </div>
 
-          <hr />
-          <li>Главное меню</li>
-          <hr />
+          <li><a href="#">Фильмы</a></li>
+          <li><a href="#">Билеты</a></li>
 
-          <li>Фильмы</li>
-          <li>Билеты</li>
-          <hr />
+          <div
+            style="
+              border-top: 1px solid #d5d5d5;
+              border-bottom: 1px solid #d5d5d5;
+            "
+          >
+            <li>
+              <img
+                class="cinema-banner"
+                src="./assets/cinemaBanner.png"
+                alt="cinema-banner.png"
+              />
+            </li>
+            <li><a href="#">Настройки</a></li>
+            <li><a href="#">Помощь</a></li>
+          </div>
 
-          <img id="cinema-banner" src="./assets/cinemaBanner.png" alt="cinema-banner.png" />
-
-          <li>Настройки</li>
-          <li>Помощь</li>
-          <hr />
-
-          <div class="user">Агасиев Саид</div>
-
-          <button>Выйти</button>
+          <li>
+            <div class="user"><a href="#">Агасиев Саид</a></div>
+          </li>
+          <li><button>Выйти</button></li>
         </ul>
       </nav>
     </div>
@@ -32,20 +50,58 @@
     <div class="main">
       <h2>Фильмы</h2>
 
-      <hr />
       <div class="genres">
         <ul>
-          <li>Комедия</li>
-          <li>Драма</li>
-          <li>Фантастика</li>
-          <li>Триллер</li>
-          <li>Фэнтези</li>
-          <li>Мюзикл</li>
-          <li>Боевик</li>
-          <li>Хоррор</li>
+          <li>
+            <label class="checkbox-btn">
+              <input type="checkbox" />
+              <span>Комедия</span>
+            </label>
+          </li>
+          <li>
+            <label class="checkbox-btn">
+              <input type="checkbox" />
+              <span>Драма</span>
+            </label>
+          </li>
+          <li>
+            <label class="checkbox-btn">
+              <input type="checkbox" />
+              <span>Фантастика</span>
+            </label>
+          </li>
+          <li>
+            <label class="checkbox-btn">
+              <input type="checkbox" />
+              <span>Триллер</span>
+            </label>
+          </li>
+          <li>
+            <label class="checkbox-btn">
+              <input type="checkbox" />
+              <span>Фэнтези</span>
+            </label>
+          </li>
+          <li>
+            <label class="checkbox-btn">
+              <input type="checkbox" />
+              <span>Мюзикл</span>
+            </label>
+          </li>
+          <li>
+            <label class="checkbox-btn">
+              <input type="checkbox" />
+              <span>Боевик</span>
+            </label>
+          </li>
+          <li>
+            <label class="checkbox-btn">
+              <input type="checkbox" />
+              <span>Хоррор</span>
+            </label>
+          </li>
         </ul>
       </div>
-      <hr />
 
       <div class="films">
         <article class="film"></article>
@@ -77,17 +133,21 @@ $light-theme-background-color: #f8f8f8;
 $dark-theme-film-background: rgb(43, 43, 43);
 $dark-theme-text-color: white;
 
-
-
-.genres ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0;
-  list-style-type: none;
-  padding-left: 1vw;
-  padding-right: 1.5vw;
+.genres {
+  border: {
+    top: 1px solid #d5d5d5;
+    bottom: 1px solid #d5d5d5;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    padding: 0;
+    list-style-type: none;
+    padding-left: 1vw;
+    padding-right: 1.5vw;
+  }
 }
 
 .films {
@@ -107,7 +167,7 @@ $dark-theme-text-color: white;
     right: 10px;
   }
   box-sizing: border-box;
-  margin-top: 20px;
+  margin-top: 1dvh;
 
   .film {
     display: flex;
@@ -131,21 +191,69 @@ $dark-theme-text-color: white;
   }
 }
 
-h1 {
-  font-size: 2em;
-  
-  @media (max-width: 1024px) {
-    font-size: 1.5em;
+.logo-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+
+  .logo-img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    margin: 0px;
   }
 }
 
-hr {
-  margin: 0;
+.cinema-banner {
+  width: 100%;
 }
 
-#cinema-banner {
-  @media (max-width: 1024px) {
-    display: none;
+.checkbox-btn {
+  display: inline-block;
+  margin: 2%;
+  user-select: none;
+  position: relative;
+}
+.checkbox-btn input[type="checkbox"] {
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+.checkbox-btn span {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px 10px;
+  line-height: 30px;
+  transition: background 0.2s ease;
+
+  box-shadow: $global-shadow-box;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Checked */
+.checkbox-btn input[type="checkbox"]:checked + span {
+  background: #FDC9FF;
+}
+
+/* Hover */
+.checkbox-btn:hover {
+  span {
+    background-color: rgb(246, 246, 246);
   }
 }
+
+/* Active */
+.checkbox-btn input[type=checkbox]:active:not(:disabled) + span {
+	background: #dedede;
+	color: #000;
+}
+
 </style>
