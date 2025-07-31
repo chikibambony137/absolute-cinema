@@ -25,16 +25,15 @@ $global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
   @media (max-width: 1024px) {
     font-size: 1em;
   }
-
 }
 
-.root {
+.main {
   display: flex;
   flex-direction: row;
   overflow: hidden;
 }
 
-.aside {
+.menu {
   background-color: $light-theme-block-background-color;
   width: 30%;
   height: 95dvh;
@@ -50,7 +49,7 @@ $global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
   box-shadow: $global-shadow-box;
   overflow: scroll;
 
-  nav ul {
+  .menu__nav ul {
     padding: 0;
     list-style: none;
 
@@ -69,6 +68,11 @@ $global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
     }
   }
 
+  .menu__outline {
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+  }
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -79,13 +83,38 @@ $global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
   }
 }
 
-.main {
+.logo-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+
+  .logo-title__logo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .logo-title__title {
+    font-size: 1.2rem;
+    margin: 0px;
+  }
+}
+
+.banner {
+  .banner__img {
+    width: 100%;
+  }
+}
+
+.content {
   background-color: $light-theme-block-background-color;
   width: 100%;
   min-width: 300px;
   height: 95dvh;
 
   overflow: scroll;
+  scroll-behavior: smooth;
 
   box-sizing: border-box;
   border-radius: 20px;
