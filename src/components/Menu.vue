@@ -21,7 +21,7 @@
 
         <li>
           <div class="menu__ref">
-            <a href="#">Билеты</a>
+            <a href="/tickets">Билеты</a>
           </div>
         </li>
 
@@ -37,18 +37,18 @@
 
         <li>
           <div class="menu__ref">
-            <a href="#">Настройки</a>
+            <a href="/settings">Настройки</a>
           </div>
         </li>
 
         <li>
           <div class="menu__ref">
-            <a href="#">Помощь</a>
+            <a href="/help">Помощь</a>
           </div>
         </li>
 
         <li>
-          <div class="menu__ref"><a href="#">Агасиев Саид</a></div>
+          <div class="menu__ref"><a href="/user">Агасиев Саид</a></div>
         </li>
         <li>
           <div class="menu__log-out">
