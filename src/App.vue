@@ -10,52 +10,52 @@
 
       <div class="menu__nav">
         <ul>
-          <div class="menu__outline">
-            <li><a href="#">Главное меню</a></li>
-          </div>
+          <li>
+            <div class="menu__ref">
+              <a href="#">Главное меню</a>
+            </div>
+          </li>
 
           <li>
-            <div class="menu__films">
+            <div class="menu__ref">
               <a href="#">Фильмы</a>
             </div>
           </li>
 
           <li>
-            <div class="menu__tickets">
+            <div class="menu__ref">
               <a href="#">Билеты</a>
             </div>
           </li>
 
-          <div class="menu__outline">
-            <li>
-              <div class="banner menu__banner">
-                <img
-                  class="banner__img"
-                  src="./assets/cinemaBanner.png"
-                  alt="banner.png"
-                />
-              </div>
-            </li>
-
-            <li>
-              <div class="menu__settings">
-                <a href="#">Настройки</a>
-              </div>
-            </li>
-
-            <li>
-              <div class="menu__help">
-                <a href="#">Помощь</a>
-              </div>
-            </li>
-          </div>
+          <li>
+            <div class="banner menu__banner">
+              <img
+                class="banner__img"
+                src="./assets/cinemaBanner.png"
+                alt="banner.png"
+              />
+            </div>
+          </li>
 
           <li>
-            <div class="user menu__user"><a href="#">Агасиев Саид</a></div>
+            <div class="menu__ref">
+              <a href="#">Настройки</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="menu__ref">
+              <a href="#">Помощь</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="menu__ref"><a href="#">Агасиев Саид</a></div>
           </li>
           <li>
-            <div class="log-out menu__log-out">
-              <button class="log-out__bttn">Выйти</button>
+            <div class="menu__log-out">
+              <button class="menu__log-out-bttn">Выйти</button>
             </div>
           </li>
         </ul>
@@ -68,49 +68,49 @@
       <div class="genres content__genres">
         <ul>
           <li>
-            <label class="genres__checkbox-btn">
+            <label class="genres__checkbox">
               <input type="checkbox" />
               <span>Комедия</span>
             </label>
           </li>
           <li>
-            <label class="genres__checkbox-btn">
+            <label class="genres__checkbox">
               <input type="checkbox" />
               <span>Драма</span>
             </label>
           </li>
           <li>
-            <label class="genres__checkbox-btn">
+            <label class="genres__checkbox">
               <input type="checkbox" />
               <span>Фантастика</span>
             </label>
           </li>
           <li>
-            <label class="genres__checkbox-btn">
+            <label class="genres__checkbox">
               <input type="checkbox" />
               <span>Триллер</span>
             </label>
           </li>
           <li>
-            <label class="genres__checkbox-btn">
+            <label class="genres__checkbox">
               <input type="checkbox" />
               <span>Фэнтези</span>
             </label>
           </li>
           <li>
-            <label class="genres__checkbox-btn">
+            <label class="genres__checkbox">
               <input type="checkbox" />
               <span>Мюзикл</span>
             </label>
           </li>
           <li>
-            <label class="genres__checkbox-btn">
+            <label class="genres__checkbox">
               <input type="checkbox" />
               <span>Боевик</span>
             </label>
           </li>
           <li>
-            <label class="genres__checkbox-btn">
+            <label class="genres__checkbox">
               <input type="checkbox" />
               <span>Хоррор</span>
             </label>
@@ -161,20 +161,20 @@ $dark-theme-text-color: white;
     padding-right: 1.5vw;
   }
 
-  .genres__checkbox-btn {
+  .genres__checkbox {
     display: inline-block;
     margin: 2%;
     user-select: none;
     position: relative;
   }
-  .genres__checkbox-btn input[type="checkbox"] {
+  .genres__checkbox input[type="checkbox"] {
     z-index: -1;
     opacity: 0;
     display: block;
     width: 0;
     height: 0;
   }
-  .genres__checkbox-btn span {
+  .genres__checkbox span {
     display: inline-block;
     cursor: pointer;
     padding: 0px 10px;
@@ -187,21 +187,34 @@ $dark-theme-text-color: white;
   }
 
   /* Checked */
-  .genres__checkbox-btn input[type="checkbox"]:checked + span {
+  .genres__checkbox input[type="checkbox"]:checked + span {
     background: #fdc9ff;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #aa0daf;
+    }
   }
 
   /* Hover */
-  .genres__checkbox-btn:hover {
+  .genres__checkbox:hover {
     span {
       background-color: rgb(246, 246, 246);
+
+      @media (prefers-color-scheme: dark) {
+        background-color: rgb(81, 81, 81);
+      }
     }
   }
 
   /* Active */
-  .genres__checkbox-btn input[type="checkbox"]:active:not(:disabled) + span {
+  .genres__checkbox input[type="checkbox"]:active:not(:disabled) + span {
     background: #dedede;
     color: #000;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: rgb(81, 81, 81);
+      color: white;
+    }
   }
 }
 
@@ -228,7 +241,7 @@ $dark-theme-text-color: white;
     display: flex;
 
     width: 100%;
-    min-width: 150px;
+    min-width: 50px;
     max-width: 300px;
 
     height: 50vh;
