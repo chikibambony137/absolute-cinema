@@ -1,14 +1,5 @@
 @import "normalize.css";
-
-$light-theme-root-background-color: #f0f0f0;
-$light-theme-block-background-color: white;
-
-$dark-theme-root-background-color: rgb(36, 36, 36);
-$dark-theme-block-background-color: rgb(50, 50, 50);
-$dark-theme-text-color: white;
-
-$global-font-family: "Montserrat", sans-serif;
-$global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
+@import "var.scss";
 
 :root {
   font-size: 1.2em;
@@ -31,90 +22,6 @@ $global-shadow-box: 2px 2px 2px rgb(0, 0, 0, 0.25);
   display: flex;
   flex-direction: row;
   overflow: hidden;
-}
-
-.menu {
-  background-color: $light-theme-block-background-color;
-  width: 30%;
-  height: 95dvh;
-  margin: 2vw 0 2vw 0;
-  box-sizing: border-box;
-  border-radius: 0 20px 20px 0;
-  padding: {
-    top: 2vh;
-    left: 1.5%;
-    right: 1.5%;
-  }
-
-  box-shadow: $global-shadow-box;
-  overflow: scroll;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-
-  .menu__nav ul {
-    padding: 0;
-    list-style: none;
-
-    .menu__ref {
-      padding: {
-        top: 1.5vh;
-        bottom: 1.5vh;
-      }
-      width: 100%;     
-
-      a {
-        color: black;
-        text-decoration: none;
-
-        @media (prefers-color-scheme: dark) {
-          color: white;
-        }
-      }
-    }
-  }
-
-  .menu__ref:hover {
-    background-color: rgb(240, 240, 240);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: rgb(42, 42, 42);
-    }
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: $dark-theme-block-background-color;
-    color: $dark-theme-text-color;
-  }
-}
-
-.logo-title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5vw;
-
-  .logo-title__logo {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  .logo-title__title {
-    font-size: 1.2rem;
-    margin: 0px;
-  }
-}
-
-.banner {
-  .banner__img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
 }
 
 .content {
