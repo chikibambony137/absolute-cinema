@@ -69,9 +69,9 @@ export default {};
 
 .menu {
   background-color: $light-theme-block-background-color;
-  width: 30%;
-  height: 95dvh;
-  margin: 2vw 0 2vw 0;
+  width: 27%;
+  height: 98dvh;
+
   box-sizing: border-box;
   border-radius: 0 20px 20px 0;
   padding: {
