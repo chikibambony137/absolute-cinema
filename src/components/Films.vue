@@ -1,26 +1,28 @@
 <template>
-  <h2>Фильмы</h2>
-  <Genres/>
-  <div class="films content_films">
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
-    <div class="films__film"></div>
+  <div class="films content__films">
+    <h2>Фильмы</h2>
+    <Genres class="films__genres"/>
+    <div class="films__list">
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+      <div class="films__item"></div>
+    </div>
   </div>
 </template>
 
 <script>
-import Genres from './Genres.vue';
+import Genres from "./Genres.vue";
 export default {
-  components: {Genres},
+  components: { Genres },
 };
 </script>
 
@@ -28,7 +30,7 @@ export default {
 @import "../style.scss";
 @import "../var.scss";
 
-.films {
+.films__list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 25px;
@@ -47,7 +49,7 @@ export default {
   box-sizing: border-box;
   margin-top: 1dvh;
 
-  .films__film {
+  .films__item {
     display: flex;
 
     width: 100%;

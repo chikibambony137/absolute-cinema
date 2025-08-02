@@ -9,7 +9,7 @@
 <template>
   <div class="main">
     
-    <Menu/>
+    <Menu class="main__menu"/>
 
     <div class="content">
       <router-view></router-view>

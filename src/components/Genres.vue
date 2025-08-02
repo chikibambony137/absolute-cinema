@@ -1,5 +1,5 @@
 <template>
-  <div class="genres content__genres">
+  <div class="genres">
     <ul>
       <li>
         <label class="genres__checkbox">
