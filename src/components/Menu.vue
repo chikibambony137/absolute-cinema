@@ -8,7 +8,7 @@
     <div class="menu__nav">
       <ul>
         <li>
-          <div class="menu__ref">
+          <div class="menu__ref menu__ref--border">
             <a href="/">Главное меню</a>
           </div>
         </li>
@@ -65,7 +65,7 @@ export default {};
 </script>
 
 <style lang="scss">
-@import '../var.scss';
+@import "../var.scss";
 
 .menu {
   background-color: $light-theme-block-background-color;
@@ -103,6 +103,13 @@ export default {};
         @media (prefers-color-scheme: dark) {
           color: $dark-theme-text-color;
         }
+      }
+    }
+
+    .menu__ref--border {
+      border: {
+        top: 1px solid #d5d5d5;
+        bottom: 1px solid #d5d5d5;
       }
     }
   }
